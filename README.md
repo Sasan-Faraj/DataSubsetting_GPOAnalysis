@@ -26,13 +26,21 @@ To use the right file path, right click your data from the folder view, click th
 Next to bring the excel sheet into R, we will rely on the 'readxl</code' package. More can be read about the <code>readxl</code> using the source [documentation](https://readxl.tidyverse.org).
 
 To start out you will want to execute the following codeblock. 
-
-<code>install.packages("readxl") <br>
-library(readxl)</code>
-
+<p>
+<code>install.packages("readxl")</code> <br>
+<code>library(readxl)</code>
+</p>
+   
+   
 The first line only needs to be run once on your computer to ensure that you computer has access to the library 'readxl'. The second line actually brings the package into your R session and it needs to be run each time you enter into an R session.
 
 ---
 
+Now that we have the library we want, we can begin to bring in the excel file. For this specific example, let's assume we are working with a .xlsx version of the data, you would run the following piece of code. Note, the specific file name may be different, but you will want to ensure that the file tage (.xlsx) is within the quotations.
 
+<code> df <- read_xlsx("datafile 2 27 23.xlsx") </code>
+
+ This line of code uses the 'read_xlsx' function to bring in the xlsx sheet and save into our R session as a dataframe labeled as df. So now whenever you want to subset the dataframe, you just need to call df. 
+   
+   <h2 align = "center"> Subsetting the Dataframe </h2>
 
