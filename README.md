@@ -4,7 +4,9 @@
    
 <h2 align="center"> Basic Overview </h2>
 
-<p align ="left"> The goal of this README is to give direct examples of how to import an excel sheet, subset a dataframe, and prepare it for analysis in R. The examples will rely on the data produced for use by the the Government Publishing Orginazation of libraries who rely on the GPO. The code in this was produced using R Studio.</p>
+<p align ="left"> The goal of this README is to give direct examples of how to import an excel sheet, subset a dataframe, and prepare it for analysis in R. The examples will rely on the data produced for use by the the Government Publishing Orginazation of libraries who rely on the GPO. The code in this was produced using R Studio. At the end of the document, all the code snippits will be posted together for ease of use.</p>
+
+
 
 
 <h2 align = "center"> Importing Data from Excel </h2>
@@ -25,7 +27,7 @@ Next to bring the excel sheet into R, we will rely on the 'readxl</code' package
 
 To start out you will want to execute the following codeblock. 
 
-<code>install.packages("readxl") 
+<code>install.packages("readxl") <br>
 library(readxl)</code>
 
 The first line only needs to be run once on your computer to ensure that you computer has access to the library 'readxl'. The second line actually brings the package into your R session and it needs to be run each time you enter into an R session.
