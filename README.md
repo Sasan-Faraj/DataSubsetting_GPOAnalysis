@@ -13,7 +13,7 @@ To import data into R, we will rely on functions. A function is a coding tool us
 
 ---
 
-First, we want to ensure that your R session is working out of the same folder that your data is in (not necessary, but makes things easy). To do that, you run the 'setwd' function that's preloaded into R. This stands for set working directory. 
+First, we want to ensure that your R session is working out of the same folder that your data is in (not necessary, but makes things easy). To do that, you run the `setwd` function that's preloaded into R. This stands for set working directory. 
 
 <code>setwd("File Path to Data")</code>
 
@@ -60,7 +60,7 @@ We use logical statements every day of our lives. For instance, I was X and Y. M
 
 <h3 align = "center"> Some Rules about the Operators </h3>
 
-The last line is especially important to make note of because parenthesis are how you group things together. For instance, if you had three objects X, Y, and Z, but you wanted to select X or (Y and Z). Then you would be okay with selecting either Y and Z, or you would be okay with selecting X (or all three). But if you wanted to select (X or Y) and Z. Then you would be okay with have X and Z, Y and Z, or all three letters. You'll notice too that and/or are used to group conditionals in a specific order where the other operators are used to specifically compare elements against a threshold/condition.
+The last line is especially important to make note of because parenthesis are how you group things together. For instance, if you had three objects X, Y, and Z, but you wanted to select X or (Y and Z). Then you would be okay with selecting either Y and Z, or you would be okay with selecting X (or all three). But if you wanted to select (X or Y) and Z. Then you would be okay with having X and Z, Y and Z, or all three letters. You'll notice too that and/or are used to group conditionals in a specific order where the other operators are used to specifically compare elements against a threshold/condition.
 
 Also note that or is inclusive, meaning if you put or in a statement, you are okay with returning either or both items on the either side of the or. 
 
