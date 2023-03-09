@@ -46,17 +46,17 @@ Now that we have the library we want, we can begin to bring in the excel file. F
 We use logical statements every day of our lives. For instance, I was X and Y. Maybe, I want X and (Y or Z). In the context of this analysis, we would say something like I want a copy of the dataframe where the (library size is small) and (the library is from Alabama or Virginia) and (they checked off for having outreach services. In R, there are specific characters that match with those logical words when subsetting a dataframe. Those are within the table below. 
 
 | Logical Statement | Logical Operator |
-| :---              |            ---:  |
+| ---              |            ---  |
 |  And | & |
 |Or  | \| |
-| <p align = "center">Equal to </p> |<p align = "center"> == </p>|
-| <p align = "center"> Not equal to </p> | <p align = "center"> != </p> |
-| <p align = "center">Greater than </p> |<p align = "center"> > </p>|
-| <p align = "center"> Less than </p> | <p align = "center"> < </p> |
-| <p align = "center"> Greater than or equal to </p>| <p align = "center"> >= </p>|
-|<p align = "center"> Less than or equal to </p>| <p align = "center"> <= </p>|
-| <p align = "center"> In </p>| <p align = "center"> %in% </p>|
-|<p align = "center"> Grouping </p>| <p align = "center"> () </p>|
+| Equal to  | == |
+|  Not equal to  |   != |
+|Greater than  | > |
+|  Less than  |  < |
+|  Greater than or equal to | >= |
+| Less than or equal to |  <= |
+|  In |  %in% |
+| Grouping |  () |
 
 <h3 align = "center"> Some Rules about the Operators </h3>
 
