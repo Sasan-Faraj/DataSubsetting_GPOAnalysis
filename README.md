@@ -58,7 +58,7 @@ We use logical statements every day of our lives. For instance, I was X and Y. M
 | <p align = "center"> In </p>| <p align = "center"> %in% </p>|
 |<p align = "center"> Grouping </p>| <p align = "center"> () </p>|
 
-<h3 align = "center> Some Rules about the Operators </h3>
+<h3 align = "center"> Some Rules about the Operators </h3>
 
 The last line is especially important to make note of because parenthesis are how you group things together. For instance, if you had three objects X, Y, and Z, but you wanted to select X or (Y and Z). Then you would be okay with selecting either Y and Z, or you would be okay with selecting X (or all three). But if you wanted to select (X or Y) and Z. Then you would be okay with have X and Z, Y and Z, or all three letters. You'll notice too that and/or are used to group conditionals in a specific order where the other operators are used to specifically compare elements against a threshold/condition.
 
