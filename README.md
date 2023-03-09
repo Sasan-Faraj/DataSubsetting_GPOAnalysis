@@ -47,8 +47,8 @@ We use logical statements every day of our lives. For instance, I was X and Y. M
 
 | Logical Statement | Logical Operator |
 | :---              |            ---:  |
-| <p align = "center"> And </p>| <p align = "center">& </p>|
-|<p align = "center"> Or </p | <p align = "center"> \| </p>|
+|  And | & |
+|Or  | \| |
 | <p align = "center">Equal to </p> |<p align = "center"> == </p>|
 | <p align = "center"> Not equal to </p> | <p align = "center"> != </p> |
 | <p align = "center">Greater than </p> |<p align = "center"> > </p>|
