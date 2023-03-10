@@ -92,7 +92,7 @@ Lastly, say you wanted find information where library type is academic law and t
 <br>
 <code> df[which((df$"Library Type" == "Academic, Law Library (AL)") & (df$"No new policies or procedures implemented." == "X")),] </code>
 
-<h3 align="center> Quick Workarounds </h3>
+<h3 align="center"> Quick Workarounds </h3>
 
 You'll notice that as you continue to use R, you will want to write these queries down faster and fast. There are a few ways to help this. 
 
