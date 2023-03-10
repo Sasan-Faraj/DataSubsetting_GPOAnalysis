@@ -72,13 +72,75 @@ The structure of subsetting a dataframe in R is roughly as follows (depends on n
 
 <code> df[which((df$"column_name1" = X) & (df$"column_name2" %in% cbind(X,Y))), ]</code>
 
-This translates to the following statement: Within the dataframe, return all the rows where the elements of column 1 are equal to X and the elements of column two are either X or Y. Note, `cbind()` is a function that creates a vector in R, so it allows you to combine multiple elements. This is useful if you want to look at libraries from two or more states.  The `which()` function is not necessary, but helps to ensure that you aren't returning a dataframe of null rows. Lastly, the comma is what tells R to return all the rows.
+This translates to the following statement: Within the dataframe, return all the rows where the elements of column 1 are equal to X and the elements of column two are either X or Y. If X and Y are strings (another word for text), you would write `"X"` or `"y"`. Note, `cbind()` is a function that creates a vector in R, so it allows you to combine multiple elements. This is useful if you want to look at libraries from two or more states.  The `which()` function is not necessary, but helps to ensure that you aren't returning a dataframe of null rows. Lastly, the comma is what tells R to return all the rows.
 
 The next section will utilize specific examples that you may encounter.
 
 <h3 align = "center"> Examples </h3>
 
+Say you wanted to look at libraries that were located in either Alabama or Virginia who marked off X for out reach services, you would write the following:
+<br>
+<code> df[which((df$'State' %in% list('VA','AL')) & df$'Outreach Services' == 'X'),] </code>
 
+Say you wanted to look at small library size where either staffing or reference services are X, you would write the following:
+<br>
+<code> df[which((df$'Library Size' =='Small (less than 250,000 volumes in the library)') & (df$'Staffing' == 'X'| df$"Reference services"=='X')),] </code>
+   - You'll see here that the entire string referencing a small library was written. This is because R processes strings such that "Small" is different from "small" which are both different from " small ". This means that we need to match exactly what's written in the column. 
+   - There will be a section later on ways to quickly get that sort of information. 
+   
+   
+Lastly, say you wanted find information where library type is academic law and there were no new policies or procedures implements, you would write the following:
+<br>
+<code> df[which((df$"Library Type" == "Academic, Law Library (AL)") & (df$"No new policies or procedures implemented." == "X")),] </code>
+
+<h3 align="center> Quick Workarounds </h3>
+
+You'll notice that as you continue to use R, you will want to write these queries down faster and fast. There are a few ways to help this. 
+
+If you want to get a list of all the column names, you could write `colnames(df)` and set that equal to a variable named `names`. So whenever you want to write a new query, you can just print out the names and then copy and past the names you want.
+
+Next, it's definitely cumbersome to always have to type of each value you are using as a threshold (i.e. `"Small (less than 250,000 volumes in the library)"`). To get around this, you can use the `unique()` function. It takes in a column and returns a list of its unique values, so you can treat it the same as the previous example. For instance, you could print out `unique(df$"Library Size")`, copy the string associated with it, and place it in your query. 
+
+<h2 align="center"> Downloading Your Dataframe Back into Excel </h2>
+
+Depending on your goals, you may want to save your dataframe as an xlsx. To do this, you first run `install.packages("writexl")` to install the package which will help us. Then you bring the library into your R session by writing `library(writexl)`. After this, you simply write `write_xlsx(df,"df.xlsx")` where you can change the name of the saved xlsx file to your statisfaction, just ensure that you have `.xlsx` at the end of it. Likewise, the first argument is the dataframe object itself.  
+
+
+<h2 align ="center"> All My Code </h2>
+
+```
+
+setwd('/folder1/folder2/folder3/folder4/folder5/GPO')
+
+install.packages("readxl")
+install.packages("writexl")
+library(readxl)
+library(writexl)
+
+df <- read_xlsx('datafile 2 27 23.xlsx')
+str(df)
+names = colnames(df) #to make life easier, use colnames and print them out so 
+                      #you can copy and paste the names when you subset.
+print(names)
+
+#Libraries in either Virginia or Alabama who marked X for outreaches services.
+a = df[which((df$'State' %in% list('VA','AL')) & df$'Outreach Services' == 'X'),]
+
+print(unique(df$'Library Size')) #Unique returns the unique values within a 
+                                 #column. You can copy and past a value you 
+                                 #want to subset for!
+
+#small library size and either staffing or reference services are X
+b = df[which((df$'Library Size' =='Small (less than 250,000 volumes in the library)') & (df$'Staffing' == 'X'| df$"Reference services"=='X')),]
+
+print(unique(df$'Library Type')) 
+#Library type is academic law and there were no new policies or procedures implements
+c = df[which((df$"Library Type" == "Academic, Law Library (AL)") & (df$"No new policies or procedures implemented." == "X")),]
+
+#save your dataframe as an xlsx
+write_xlsx(c,"c.xlsx")
+
+```
 
 
 
