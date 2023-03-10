@@ -3,7 +3,7 @@
    
 <h2 align="center"> Basic Overview </h2>
 
-<p align ="left"> The goal of this README is to give direct examples of how to import an excel sheet, subset a dataframe, and prepare it for analysis in R. The examples will rely on the data produced for use by the the Government Publishing Orginazation of libraries who rely on the GPO. The code in this was produced using R Studio. At the end of the document, all the code snippits will be posted together for ease of use.</p>
+<p align ="left"> The goal of this README is to give direct examples of how to import an excel sheet, subset a dataframe, and export the dataframe as an excel sheet as needed in R. The examples will rely on the data produced for use by the the Government Publishing Orginazation of libraries who rely on the GPO. The code in this was produced using RStudio. At the end of the document, all the code snippits will be posted together for ease of use.</p>
 
 
 <h2 align = "center"> Importing Data from Excel </h2>
@@ -20,7 +20,7 @@ To use the correct file path, right click your data from the folder view, click 
 
 ---
 
-Next to bring the excel sheet into R, we will rely on the 'readxl</code' package. More can be read about the <code>readxl</code> using the source [documentation](https://readxl.tidyverse.org).
+Next to bring the excel sheet into R, we will rely on the `readxl` package. More can be read about the <code>readxl</code> using the source [documentation](https://readxl.tidyverse.org).
 
 To start out you will want to execute the following codeblock. 
 <p>
@@ -29,20 +29,22 @@ To start out you will want to execute the following codeblock.
 </p>
    
    
-The first line only needs to be run once on your computer to ensure that you computer has access to the library 'readxl'. The second line actually brings the package into your R session and it needs to be run each time you enter into an R session.
+The first line only needs to be run once on your computer to ensure that your computer has access to the package 'readxl'. The second line actually brings the package into your R session and it needs to be run each time you enter into an R session.
 
 ---
 
-Now that we have the library we want, we can begin to bring in the excel file. For this specific example, let's assume we are working with a .xlsx version of the data, you would run the following piece of code. Note, the specific file name may be different, but you will want to ensure that the file tage (.xlsx) is within the quotations.
+Now that we have the package we want, we can begin to bring in the excel file. For this specific example, let's assume we are working with a .xlsx version of the data, you would run the following piece of code. Note, the specific file name may be different, but you will want to ensure that the file tage (.xlsx) is within the quotations.
 
 <code> df <- read_xlsx("datafile 2 27 23.xlsx") </code>
 
- This line of code uses the 'read_xlsx' function to bring in the xlsx sheet and save into our R session as a dataframe labeled as df. So now whenever you want to subset the dataframe, you just need to call df. 
+ This line of code uses the 'read_xlsx' function to bring in the xlsx sheet and save into our R session as a dataframe labeled as df. Now whenever you want to see the dataframe, you can either write and run `view(df)`, or you can click `df` on the top right panel of your RStudio session.
+ 
+ There are analogous functions for other types of excel sheets that you can find in the documentation. 
    
    
    <h2 align = "center"> Subsetting the Dataframe </h2>
 
-We use logical statements every day of our lives. For instance, I was X and Y. Maybe, I want X and (Y or Z). In the context of this analysis, we would say something like I want a copy of the dataframe where the (library size is small) and (the library is from Alabama or Virginia) and (they checked off for having outreach services. In R, there are specific characters that match with those logical words when subsetting a dataframe. Those are within the table below. 
+We use logical statements every day of our lives. For instance, I was X and Y. Maybe, I want X and (Y or Z). In the context of this analysis, we would say something like I want a copy of the dataframe where the (library size is small) and (the library is from Alabama or Virginia) and (they checked off for having outreach services). In R, there are specific characters that match with those logical words when subsetting a dataframe. Those are within the table below. 
 
 | Logical Statement | Logical Operator |
 | ---              |            ---  |
@@ -59,7 +61,7 @@ We use logical statements every day of our lives. For instance, I was X and Y. M
 
 <h3 align = "center"> Some Rules about the Operators </h3>
 
-The last line is especially important to make note of because parenthesis are how you group things together. For instance, if you had three objects X, Y, and Z, but you wanted to select X or (Y and Z). Then you would be okay with selecting either Y and Z, or you would be okay with selecting X (or all three). But if you wanted to select (X or Y) and Z. Then you would be okay with having X and Z, Y and Z, or all three letters. You'll notice too that and/or are used to group conditionals in a specific order where the other operators are used to specifically compare elements against a threshold/condition.
+The last line is especially important to make note of because parenthesis are how you group things together. For instance, if you had three objects X, Y, and Z, but you wanted to select X or (Y and Z). Then you would be okay with selecting either Y and Z, X, or all three. But if you wanted to select (X or Y) and Z. Then you would be okay with having X and Z, Y and Z, or all three letters. You'll notice too that and/or are used to group conditionals in a specific order where the other operators are used to specifically compare elements against a threshold/condition.
 
 Also note that or is inclusive, meaning if you put or in a statement, you are okay with returning either or both items on the either side of the or. 
 
@@ -79,7 +81,7 @@ The next section will utilize specific examples that you may encounter.
 
 Say you wanted to look at libraries that were located in either Alabama or Virginia who marked off X for out reach services, you would write the following:
 <br>
-<code> df[which((df$'State' %in% list('VA','AL')) & df$'Outreach Services' == 'X'),] </code>
+<code> df[which((df$'State' %in% cbind('VA','AL')) & df$'Outreach Services' == 'X'),] </code>
 
 Say you wanted to look at small library size where either staffing or reference services are X, you would write the following:
 <br>
@@ -123,7 +125,7 @@ names = colnames(df) #to make life easier, use colnames and print them out so
 print(names)
 
 #Libraries in either Virginia or Alabama who marked X for outreaches services.
-a = df[which((df$'State' %in% list('VA','AL')) & df$'Outreach Services' == 'X'),]
+a = df[which((df$'State' %in% cbind('VA','AL')) & df$'Outreach Services' == 'X'),]
 
 print(unique(df$'Library Size')) #Unique returns the unique values within a 
                                  #column. You can copy and past a value you 
