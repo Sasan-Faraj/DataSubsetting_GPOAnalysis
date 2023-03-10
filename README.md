@@ -71,7 +71,7 @@ The structure of subsetting a dataframe in R is roughly as follows (depends on n
 
 <code> df[which((df$"column_name1" = X) & (df$"column_name2" %in% cbind(X,Y))), ]</code>
 
-This translates to the following statement: Within the dataframe, return all the rows where the elements of column 1 are equal to X and the elements of column two are either X or Y. If X and Y are strings (another word for text), you would write `"X"` or `"y"`. Note, `cbind()` is a function that creates a vector in R, so it allows you to combine multiple elements. This is useful if you want to look at libraries from two or more states.  The `which()` function is not necessary, but helps to ensure that you aren't returning a dataframe of null rows. Lastly, the comma is what tells R to return all the rows.
+This translates to the following statement: Within the dataframe, return all the rows where the elements of column 1 are equal to X and the elements of column two are either X or Y. If X and Y are strings (another word for text), you would write `"X"` or `"y"`. Note, `cbind()` is a function that creates a vector in R, so it allows you to combine multiple elements. This is useful if you want to look at libraries from two or more states.  The `which()` function is not necessary, but helps to ensure that you aren't returning a dataframe of null rows. Here is the link for the [documentation](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/which). Lastly, the comma is what tells R to return all the rows.
 
 The next section will utilize specific examples that you may encounter.
 
@@ -102,7 +102,7 @@ Next, it's definitely cumbersome to always have to type of each value you are us
 
 <h2 align="center"> Downloading Your Dataframe Back into Excel </h2>
 
-Depending on your goals, you may want to save your dataframe as an xlsx. To do this, you first run `install.packages("writexl")` to install the package which will help us. Then you bring the library into your R session by writing `library(writexl)`. After this, you simply write `write_xlsx(df,"df.xlsx")` where you can change the name of the saved xlsx file to your statisfaction, just ensure that you have `.xlsx` at the end of it. Likewise, the first argument is the dataframe object itself.  
+Depending on your goals, you may want to save your dataframe as an xlsx. To do this, you first run `install.packages("writexl")` to install the package which will help us. Then you bring the library into your R session by writing `library(writexl)`. After this, you simply write `write_xlsx(df,"df.xlsx")` where you can change the name of the saved xlsx file to your statisfaction, just ensure that you have `.xlsx` at the end of it. Likewise, the first argument is the dataframe object itself. Here is the [documentation](https://www.rdocumentation.org/packages/xlsx/versions/0.6.5/topics/write.xlsx).
 
 
 <h2 align ="center"> All My Code </h2>
