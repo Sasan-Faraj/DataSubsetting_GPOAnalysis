@@ -16,7 +16,7 @@ First, we want to ensure that your R session is working out of the same folder t
 
 <code>setwd("File Path to Data")</code>
 
-To use the right file path, right click your data from the folder view, click the option for more information, and copy the the file path. 
+To use the correct file path, right click your data from the folder view, click the option for more information, and copy the the file path. When you want to run a piece of code, highlight it, and then click the run button on the top right of the script window. 
 
 ---
 
