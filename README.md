@@ -21,11 +21,15 @@ To import data into R, we will rely on functions. A function is a coding tool us
 
 ---
 
-First, we want to ensure that your R session is working out of the same folder that your data is in (not necessary, but makes things easy). To do that, you run the `setwd` function that's preloaded into R. This stands for set working directory. 
+First, we want to ensure that your R session is working out of the same folder that your data is in. That being said, if you are already working out of the same folder, there is also no need for this step. 
+
+If not, you should run the `setwd` function that's preloaded into R. This stands for set working directory. 
 
 <code>setwd("File Path to Data")</code>
 
 To use the correct file path, right click your data from the folder view, click the option for more information, and copy the the file path. When you want to run a piece of code, highlight it, and then click the run button on the top right of the script window. 
+
+_Working out of the same file is not necessary, but it makes learning the concept easier. If that was the case, you would simply write out the file path to your data when you bring your as discussed the data in the section_.
 
 ---
 
