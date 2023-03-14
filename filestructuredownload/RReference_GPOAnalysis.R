@@ -2,7 +2,9 @@
 
 #If this file/session is not already open from the folder
 #in which your data is located, please delete the "~file path"
-#and insert the file path to where your data is
+#and insert the file path to where your data is located. 
+#Then delete the pound sign, and run the command set(wd) with 
+#the new file path set inside of the parenthesis.
 
 
 #setwd("~/File path/")
@@ -29,9 +31,11 @@ library(writexl)
 
 #------------BRING IN DATAFRAME------------
 
-#please replace "filename.xlsx" with the actual name of the file
+#Replace "datafile_2_27_23.xlsx" with the actual name of the file
+#with the name of another xlsx file, if you would like to change
+#the data you want to work with.
 
-df <- read_xlsx("filename.xlsx") #assigns the xlsx to the variable df
+df <- read_xlsx("datafile_2_27_23.xlsx") #assigns the xlsx to the variable df
 
 
 str(df) #shows what type of data each column is
