@@ -10,9 +10,9 @@ To make things easier as well, feel free to download this [R script](filestructu
 
 **Prior to running the R script, ensure that both files are in the same folder.** 
 
-Once they are in the same folder, you can open double click the R script to open in RStudio and highlight then run the whole code. Likewise, the script is slighltly different from the code snippet at the end of the document because it ensures that you can run the whole thing without needed to adjust any variables. 
+Once they are in the same folder, you can open double click the R script to open in RStudio and highlight then run the whole code. Likewise, the script is slighltly different from the code snippet at the end of the README because it ensures that you can run the whole thing without needing to adjust any variables. 
 
-The goal is that you can just change the file name for whatever xlsx file you want to use. You can also use it as a base for your own data exploration of subsetting. Once you get comfortable with the code, you can always open up a new script and populate it with the specific functions and lines of code you want to use. 
+The goal for the Rscript and respective data is so you can use it as a base for your own data exploration or subsetting. Once you get comfortable with the code, you can always open up a new script and populate it with the specific functions and lines of code you want to use. 
 
 
 <h2 align = "center"> Importing Data from Excel </h2>
