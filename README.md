@@ -6,6 +6,9 @@
 <p align ="left"> The goal of this README is to give direct examples of how to import an excel sheet, subset a dataframe, and export the dataframe as an excel sheet as needed in R. The examples will rely on the data produced for use by the the Government Publishing Orginazation of libraries who rely on the GPO. The code in this was produced using RStudio. At the end of the document, all the code snippits will be posted together for ease of use.</p>
 
 
+To make things easier as well, feel free to download this [folder], which contains an r script and preloaded data. The goal is that you can just change the file name for whatever xlsx file you want to use. You would potentially need to update the file structure as well. 
+
+
 <h2 align = "center"> Importing Data from Excel </h2>
 
 To import data into R, we will rely on functions. A function is a coding tool used to make repetitve coding tasks easier to perform. You insert specified data into the function, and it returns to you a specified output. With any function we use to perform tasks in R, we must first ensure that the function's library is installed. The library is the overall software package that contains different functions (and sometimes data).
