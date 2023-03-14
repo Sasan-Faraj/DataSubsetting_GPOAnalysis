@@ -3,10 +3,16 @@
    
 <h2 align="center"> Basic Overview </h2>
 
-<p align ="left"> The goal of this README is to give direct examples of how to import an excel sheet, subset a dataframe, and export the dataframe as an excel sheet as needed in R. The examples will rely on the data produced for use by the the Government Publishing Orginazation of libraries who rely on the GPO. The code in this was produced using RStudio. At the end of the document, all the code snippits will be posted together for ease of use.</p>
+<p align ="left"> The goal of this README is to give direct examples of how to import an excel sheet, subset a dataframe, and export the dataframe as an excel sheet as needed in R. The examples will rely on the data produced for use by the the Government Publishing Orginazation of libraries who rely on the GPO. The code for this document was produced using RStudio. At the end of the document, all the code snippits will be posted together for ease of use.</p>
 
 
-To make things easier as well, feel free to download this [R script](filestructuredownload/RReference_GPOAnalysis.R "download") and this [excel](filestructuredownload/datafile_2_27_23.xlsx "download") file. **Prior to running the R script, ensure that both files are in the same folder.** The goal is that you can just change the file name for whatever xlsx file you want to use. You would potentially need to update the file structure as well. 
+To make things easier as well, feel free to download this [R script](filestructuredownload/RReference_GPOAnalysis.R "download") and this [excel](filestructuredownload/datafile_2_27_23.xlsx "download") file. 
+
+**Prior to running the R script, ensure that both files are in the same folder.** 
+
+Once they are in the same folder, you can open double click the R script to open in RStudio and highlight then run the whole code. Likewise, the script is slighltly different from the code snippet at the end of the document because it ensures that you can run the whole thing without needed to adjust any variables. 
+
+The goal is that you can just change the file name for whatever xlsx file you want to use. You can also use it as a base for your own data exploration of subsetting. Once you get comfortable with the code, you can always open up a new script and populate it with the specific functions and lines of code you want to use. 
 
 
 <h2 align = "center"> Importing Data from Excel </h2>
