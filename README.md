@@ -74,7 +74,7 @@ Lastly, if you are trying to subset for a string (i.e. words or stuff saved as t
 
 The structure of subsetting a dataframe in R is roughly as follows (depends on number of conditions).. Remember that we set the dataframe equal to df eariler. 
 
-<code> df[which((df$"column_name1" = X) & (df$"column_name2" %in% cbind(X,Y))), ]</code>
+<code> df[which((df$"column_name1" == X) & (df$"column_name2" %in% cbind(X,Y))), ]</code>
 
 This translates to the following statement: Within the dataframe, return all the rows where the elements of column 1 are equal to X and the elements of column two are either X or Y. If X and Y are strings (another word for text), you would write `"X"` or `"y"`. Note, `cbind()` is a function that creates a vector in R, so it allows you to combine multiple elements. This is useful if you want to look at libraries from two or more states.  The `which()` function is not necessary, but helps to ensure that you aren't returning a dataframe of null rows. Here is the link for the [documentation](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/which). Lastly, the comma is what tells R to return all the rows.
 
