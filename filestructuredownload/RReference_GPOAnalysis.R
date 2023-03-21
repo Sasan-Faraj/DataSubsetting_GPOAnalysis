@@ -1,13 +1,18 @@
 #------------WORKING DIRECTORY------------
 
-#If this file/session is not already open from the folder
-#in which your data is located, please delete the "~file path"
-#and insert the file path to where your data is located. 
-#Then delete the pound sign, and run the command set(wd) with 
-#the new file path set inside of the parenthesis.
+#The command below sets the r session to 
+#work out of a specific folder.
+#Copy and paste the file path location
+#of your data into the quotations
+# next to filepath 
+# (right click it in files
+# and look for the location). 
+#Paste it inside the quotation marks.
+#ENSURE TO USE FORWARD SLASHES AND NOT BACKWARDS
 
 
-#setwd("~/File path/")
+filepath = ""
+setwd(filepath)
 
 
 #------------INSTALL NECESSARY PACKAGES TO COMPUTER------------
