@@ -36,11 +36,11 @@ library(writexl)
 
 #------------BRING IN DATAFRAME------------
 
-#Replace "datafile_2_27_23.xlsx" with the actual name of the file
+#Replace "DLC-COVID19WG-2021-biennial-survey-q6-2023.xlsx" with the actual name of the file
 #with the name of another xlsx file, if you would like to change
 #the data you want to work with.
 
-df <- read_xlsx("datafile_2_27_23.xlsx") #assigns the xlsx to the variable df
+df <- read_xlsx("DLC-COVID19WG-2021-biennial-survey-q6-2023.xlsx") #assigns the xlsx to the variable df
 
 
 str(df) #shows what type of data each column is
