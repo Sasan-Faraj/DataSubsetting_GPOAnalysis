@@ -82,7 +82,7 @@ The grouping line is especially important to make note of because parenthesis ar
 
 Also note that or is inclusive, meaning if you put or in a statement, you are okay with returning either or both items on the either side of the or. 
 
-<h4 align = "center"> When to use equals, is not, or is null </h4>
+<h4 align = "center"> When to use is not versus is null </h4>
  
 Generally when you are looking for element that is not equal to a certain condition, your would use the `!=` command. But for this, you want to ensure that there are other values in the column that are values other than the one you are looking for and are not null. Null means that there is no value in a given cell. For instance, if you wanted to look for libraries not in virginia you would write, <code> df[which((df$'State' != 'VA')),]</code>. We can do this because the other values in the state column are not empty. 
    
