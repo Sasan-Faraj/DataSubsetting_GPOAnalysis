@@ -77,6 +77,14 @@ print(unique(df$'Library Type'))
 #Library type is academic law and there were no new policies or procedures implements
 d = df[which((df$"Library Type" == "Academic, Law Library (AL)") & (df$"No new policies or procedures implemented." == "X")),]
 
+#Libraries that are selective type Regional 
+#AND made changes to Collection maintenance and weeding 
+#BUT did NOT make changes to Instructional and Educational Services
+e = df[which(((df$`Depository Type`=='Selective')
+         & (df$`Collection maintenance and weeding`=='X')) & 
+           (is.na(df$`Instructional and Educational Services`))),] 
+
+
 
 #------------EXPORT DATAFRAME------------
 
