@@ -71,15 +71,25 @@ We use logical statements every day of our lives. For instance, I was X and Y. M
 | Less than or equal to |  <= |
 |  In |  %in% |
 | Grouping |  () |
-
+| Is null | is.na()|
+                              
+                              
 <h3 align = "center"> Some Rules about the Operators </h3>
 
-The last line is especially important to make note of because parenthesis are how you group things together. For instance, if you had three objects X, Y, and Z, but you wanted to select X or (Y and Z). Then you would be okay with selecting either Y and Z, X, or all three. But if you wanted to select (X or Y) and Z. Then you would be okay with having X and Z, Y and Z, or all three letters. You'll notice too that and/or are used to group conditionals in a specific order where the other operators are used to specifically compare elements against a threshold/condition.
+The grouping line is especially important to make note of because parenthesis are how you group things together. For instance, if you had three objects X, Y, and Z, but you wanted to select X or (Y and Z). Then you would be okay with selecting either Y and Z, X, or all three. But if you wanted to select (X or Y) and Z. Then you would be okay with having X and Z, Y and Z, or all three letters. You'll notice too that and/or are used to group conditionals in a specific order where the other operators are used to specifically compare elements against a threshold/condition. 
+   
+**It is important that each element within your subsetting is grouped into their own set of parentheses**
 
 Also note that or is inclusive, meaning if you put or in a statement, you are okay with returning either or both items on the either side of the or. 
 
-Lastly, if you are trying to subset for a string (i.e. words or stuff saved as text), you should only use `=`,`!=`, or `%in%`. If you are using numbers, feel free to use those and the rest. 
-
+<h4 align = "center"> When to use equals, is not, or is null </h4>
+ 
+Generally when you are looking for element that is not equal to a certain condition, your would use the `!=` command. But for this, you want to ensure that there are other values in the column that are values other than the one you are looking for and are not null. Null means that there is no value in a given cell. For instance, if you wanted to look for libraries not in virginia you would write, <code> df[which((df$'State' != 'VA')),]</code>. We can do this because the other values in the state column are not empty. 
+   
+That being said, this data frame is set up such that the columns pertaining to the survey responses (i.e. most of the columns to the right of the library number column such as "Collection Maintenance and Weeding" through "Storage") either displays an "X" which means that the library has conducted that action, or it is null, meaning the library did not conduct that action. To see if a library did not conduct and action, you would use the language `df[which((is.na(df$'Instructional and Educational Services'))),] `. 
+   
+Thess examples will be elaborated on below.
+   
 ---
 
 The structure of subsetting a dataframe in R is roughly as follows (depends on number of conditions).. Remember that we set the dataframe equal to df eariler. 
@@ -103,10 +113,11 @@ Say you wanted to look at small library size where either staffing or reference 
    - There will be a section later on ways to quickly get that sort of information. 
    
    
-Lastly, say you wanted find information where library type is academic law and there were no new policies or procedures implements, you would write the following:
+Say you wanted find information where library type is academic law and there were no new policies or procedures implements, you would write the following:
 <br>
-<code> df[which((df$"Library Type" == "Academic, Law Library (AL)") & (df$"No new policies or procedures implemented." == "X")),] </code>
-
+<code> df[which((df$"Library Type" == "Academic, Law Library (AL)") & (df$"No new policies or procedures implemented." == "X")),] </code>   
+   
+   
 <h3 align="center"> Quick Workarounds </h3>
 
 You'll notice that as you continue to use R, you will want to write these queries down faster and fast. There are a few ways to help this. 
