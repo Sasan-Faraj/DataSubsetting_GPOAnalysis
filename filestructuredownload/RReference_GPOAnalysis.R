@@ -71,17 +71,17 @@ print(unique(df$'Library Size')) #Unique returns the unique values within a
 #----------------------------------------
 #subset a dataframe based on three columns
 #small library size and either staffing or reference services are X
-c = df[which((df$'Library Size' =='Small (less than 250,000 volumes in the library)') & (df$'Staffing' == 'X'| df$"Reference services"=='X')),]
+c = df[which((df$'Library Size' =='Small (less than 250,000 volumes in the library)') & (df$'Staffing' == 'X'| df$"Reference Services"=='X')),]
 
 print(unique(df$'Library Type')) 
 #Library type is academic law and there were no new policies or procedures implements
-d = df[which((df$"Library Type" == "Academic, Law Library (AL)") & (df$"No new policies or procedures implemented." == "X")),]
+d = df[which((df$"Library Type" == "Academic, Law Library (AL)") & (df$"No new policies or procedures implemented" == "X")),]
 
 #Libraries that are selective type Regional 
 #AND made changes to Collection maintenance and weeding 
 #BUT did NOT make changes to Instructional and Educational Services
 e = df[which(((df$`Depository Type`=='Selective')
-         & (df$`Collection maintenance and weeding`=='X')) & 
+         & (df$`Collection Maintenance and Weeding`=='X')) & 
            (is.na(df$`Instructional and Educational Services`))),] 
 
 
