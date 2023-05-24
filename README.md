@@ -86,7 +86,7 @@ Also note that or is inclusive, meaning if you put or in a statement, you are ok
  
 Generally when you are looking for element that is not equal to a certain condition, your would use the `!=` command. But for this, you want to ensure that there are other values in the column that are values other than the one you are looking for and are not null. Null means that there is no value in a given cell. For instance, if you wanted to look for libraries not in virginia you would write, <code> df[which((df$'State' != 'VA')),]</code>. We can do this because the other values in the state column are not empty. 
    
-That being said, this data frame is set up such that the columns pertaining to the survey responses (i.e. most of the columns to the right of the library number column such as "Collection Maintenance and Weeding" through "Storage") either displays an "X" which means that the library has conducted that action, or it is null, meaning the library did not conduct that action. To see if a library did not conduct and action, you would use the language `df[which((is.na(df$'Instructional and Educational Services'))),] `. 
+That being said, this data frame is set up such that the columns pertaining to the survey responses (i.e. most of the columns to the right of the library number column such as "Collection Maintenance and Weeding" through "Storage") either displays an "X" which means that the library has conducted that action, or it is null or 'Former', meaning the library did not conduct that action or changed from the previous years. To see if a library did not conduct and action, you would use the language `df[which( (is.na('Partnership Agreement') | (df$'Partnership Agreement' == 'Former') )),] `. 
    
 Thess examples will be elaborated on below.
    
@@ -215,11 +215,11 @@ d = df[which((df$'Library Type' == 'Academic, Law Library (AL)') & (df$'No new p
 
 #Libraries that are selective type Regional 
 #AND made changes to Collection maintenance and weeding 
-#BUT did NOT make changes to Instructional and Educational Services
+#BUT did NOT make changes to the partnership agreement
 e = df[which(((df$'Depository Type'=='Selective')
          & (df$'Collection Maintenance and Weeding'=='X')) & 
-          ( (is.na(df$'Instructional and Educational Services'))|
-           (df$'Instructional and Educational Services' =='Former'))),] 
+          ( (is.na(df$'Partnership Agreement'))|
+           (df$'Partnership Agreement' =='Former'))),] 
 
 
 
