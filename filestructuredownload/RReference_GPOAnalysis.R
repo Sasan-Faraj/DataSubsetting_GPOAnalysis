@@ -79,11 +79,11 @@ d = df[which((df$'Library Type' == 'Academic, Law Library (AL)') & (df$'No new p
 
 #Libraries that are selective type Regional 
 #AND made changes to Collection maintenance and weeding 
-#BUT did NOT make changes to Instructional and Educational Services
+#BUT did NOT make changes to the partnership agreement
 e = df[which(((df$'Depository Type'=='Selective')
          & (df$'Collection Maintenance and Weeding'=='X')) & 
-          ( (is.na(df$'Instructional and Educational Services'))|
-           (df$'Instructional and Educational Services' =='Former'))),] 
+          ( (is.na(df$'Partnership Agreement'))|
+           (df$'Partnership Agreement' =='Former'))),] 
 
 
 
